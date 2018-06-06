@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     
+    a:visited { text-decoration: none; color:white; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color:black }
+    
 #demo {
     position: absolute;
    margin-left: auto;
@@ -37,32 +42,65 @@ right: 0;
     body {
         position: relative;
         text-align: center;
-        text-align: center;
         background-image: url(bgblock.png);
         background-repeat: repeat;
     }
     
     #owlpic {
         position: absolute;
-        z-index: -1;
+        z-index: -2;
         margin-left: auto;
 margin-right: auto;
         top: 10px;
 left: 0;
 right: 0;
     }
+    
+    #lastOwl {
+        width: 100%;
+        left: 10px;
+    }
+    
+    #spotText {
+        
+    }
+    
+    #link {
+       
+    }
+    
+    #leftDiv{
+        
+       width: 400px;
+        overflow-x: hidden;
+         font-weight: bold;
+    color: white;
+        font-size: 30px;
+        left: 300;
+    font-weight: bold;
+        text-align: left;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: black;
+    } 
 </style>
 </head>
-<body background=>
+<body>
 	
 <h3 id="staticText">Days since last owl print spotted on stream:</h3>    
-     <img id="owlpic" src="owl.jpg">
+     <img id="owlpic" src="owl.jpg">  <p id="demo"></p>
+    <div id="leftDiv">
+    <p id="spotText">Last spotting:
+(June 6th)</p>
+    <img id="lastOwl" src="lastOwl.jpg">
+    
+        <a id="link" href="https://mokuhankan.com/catalogue/0334.php">Buy the owl print!</a>    
+</div>
 
-<p id="demo"></p>
-
+  
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("May 20, 2018 15:37:25").getTime();
+var countDownDate = new Date("Jun 6, 2018 01:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
