@@ -64,9 +64,15 @@ right: 0;
     
     
     #link {
+        text-decoration: none;
        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: black;
+        
+        font-weight: italic;
+    }
+    #link:hover {
+        opacity: 0.4;
     }
     
     #leftDiv{
@@ -91,7 +97,7 @@ right: 0;
      <img id="owlpic" src="owl.jpg">  <p id="demo"></p>
     <div id="leftDiv">
     <p id="spotText">Last spotting:
-(June 6th)</p>
+(June 10th)</p>
     <img id="lastOwl" src="lastOwl.jpg">
     
         <a id="link" href="https://mokuhankan.com/catalogue/0334.php">Buy the owl print!</a>    
@@ -101,7 +107,7 @@ right: 0;
 <script>
 // Set the date we're counting down to
 // Is currently set to an earlier date due to timezone issues.
-var countDownDate = new Date("Jun 5, 2018 17:37:25").getTime(); 
+var countDownDate = new Date("Jun 10, 2018 02:14:25").getTime(); 
 
 // Update the count down every 1 second
 var x = setInterval(function() {
