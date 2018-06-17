@@ -11,24 +11,8 @@ a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
 a:hover, a:active { text-decoration: none; color:black }
     
-#demo {
-    position: absolute;
-   margin-left: auto;
-margin-right: auto;
-left: 0;
-right: 0;
-    margin:100px;
-    padding:0;
-    font-size: 160px;
-    padding-top: -50px;
-    font-weight: bold;
-    color: white;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 5px;
-  -webkit-text-stroke-color: black;
-}
     
-    #staticText {
+    .staticText {
         
         padding-top: 110px;
         top: 50px;
@@ -59,27 +43,10 @@ right: 0;
         z-index: -2;
         margin-left: auto;
         margin-right: auto;
-        top: 10px;
+        top: 30%;
         left: 0;
         right: 0;
-    }
-    
-    #lastOwl {
-        width: 100%;
-        left: 10px;
-    }
-    
-    
-    #link {
-        text-decoration: none;
-       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: black;
-        
-        font-weight: italic;
-    }
-    #link:hover {
-        opacity: 0.4;
+        height: 30%;
     }
     
     #leftDiv{
@@ -106,72 +73,38 @@ right: 0;
         height: 3%;
     }
     
-    #icon-upload {
-        
-       height: 100%;
-        float: right;
-        padding-right: 30px;
+    #maxSpeed {
+        font-size: 100px;
+         text-align: center;
+        color: purple;
+        -webkit-text-fill-color: purple; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+        padding-top: 15%;
     }
-    
 
 </style>
 </head>
 <body>
 	
-<h3 id="staticText">Days since last owl print spotted on stream:</h3>    
-     <img id="owlpic" src="owl.jpg">  <p id="demo">...</p>
-    <div id="leftDiv">
-    <p id="spotText">Last spotting: <span id="spottedDate">test</span>
-</p>
-    <img id="lastOwl" src="lastOwl.jpg">
-    
-        <a id="link" href="https://mokuhankan.com/catalogue/0334.php">Buy the owl print!</a>    
-</div>
-    
+<h3 class="staticText">Max upload speed:</h3>    
 
-    <div id="rightDiv">
-        <a href="maxupload.html">
-        <svg id="icon-upload" viewBox="0 0 24.01 23.99">
+
+        <a href="https://www.w3schools.com">
+        <svg id="owlpic" viewBox="0 0 24.01 23.99">
     <title>upload</title>
     <path d="M54.26,238a12,12,0,1,0,12,12A12,12,0,0,0,54.26,238Zm0,22a10,10,0,1,1,10-10A10,10,0,0,1,54.28,260ZM55,244.28a1,1,0,0,0-1.42,0l-5,5A1,1,0,0,0,50,250.7l3.3-3.3V255a1,1,0,0,0,2,0v-7.59l3.3,3.3A1,1,0,0,0,60,249.29Z" transform="translate(-42.26 -238)"></path>
     </svg>
     </a>
-    </div>
+
+    <h2 id="maxSpeed">792</h2>
    
 
     
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    
-    
-</script>
-    
-<script>
-    $.ajax({
-    type: "GET",  //request type    
-    url: "https://api.keyvalue.xyz/5224df08/davudavudavu10293847", //url to get
-    success: function(data){  //callback to run when we get the data back
-        console.log(data) //this would return an string
-
-        var dataObject = JSON.parse(data) // convert to an object
-
-
-        document.getElementById('lastOwl').src = dataObject.image;
-
-
-        var date = dataObject.date;
-        var monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-                        ];
-
-        var d = new Date(date*1000);
-
-        console.log(monthNames[d.getMonth()]);
-        
-        console.log(d.getDay()*1000);
-      
-        document.getElementById('spottedDate').innerHTML = monthNames[d.getMonth()] + ' ' + d.getDate();
-        // Set the date we're counting down to
-        // Is currently set to an earlier date due to timezone issues.
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+// Set the date we're counting down to
+// Is currently set to an earlier date due to timezone issues.
 var countDownDate = new Date("Jun 10, 2018 02:14:25").getTime(); 
 
 // Update the count down every 1 second
@@ -181,7 +114,7 @@ var x = setInterval(function() {
     var now = new Date().getTime();
     
     // Find the distance between now an the count down date
-    var distance = now - countDownDate;
+    var distance = now -countDownDate;
     
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -196,15 +129,7 @@ var x = setInterval(function() {
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
-    }   
-    });
-
-    
-    
 </script>
-    
-    
-
 
 </body>
 </html>
