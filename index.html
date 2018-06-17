@@ -147,62 +147,64 @@ right: 0;
     
 <script>
     $.ajax({
-    type: "GET",  //request type    
-    url: "https://api.keyvalue.xyz/5224df08/davudavudavu10293847", //url to get
-    success: function(data){  //callback to run when we get the data back
-        console.log(data) //this would return an string
+        type: "GET", //request type    
+        url: "saltnpepashere.txt", //url to get
+        success: function(data) { //callback to run when we get the data back
+            $.ajax({
+                type: "GET", //request type    
+                url: data, //url to get
+                success: function(data) { //callback to run when we get the data back
+                    console.log(data) //this would return an string
 
-        var dataObject = JSON.parse(data) // convert to an object
+                    var dataObject = JSON.parse(data) // convert to an object
 
 
-        document.getElementById('lastOwl').src = dataObject.image;
+                    document.getElementById('lastOwl').src = dataObject.image;
 
 
-        var date = dataObject.date;
-        var monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-                        ];
+                    var date = dataObject.date;
+                    var monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ];
 
-        var d = new Date(date*1000);
+                    var d = new Date(date * 1000);
 
-        console.log(monthNames[d.getMonth()]);
-        
-        console.log(d.getDay()*1000);
-      
-        document.getElementById('spottedDate').innerHTML = monthNames[d.getMonth()] + ' ' + d.getDate();
-        // Set the date we're counting down to
-        // Is currently set to an earlier date due to timezone issues.
-var countDownDate = new Date("Jun 10, 2018 02:14:25").getTime(); 
+                    console.log(monthNames[d.getMonth()]);
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+                    console.log(d.getDay() * 1000);
 
-    // Get todays date and time
-    var now = new Date().getTime();
-    
-    // Find the distance between now an the count down date
-    var distance = now - countDownDate;
-    
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    document.getElementById('spottedDate').innerHTML = monthNames[d.getMonth()] + ' ' + d.getDate();
+                    // Set the date we're counting down to
+                    // Is currently set to an earlier date due to timezone issues.
+                    var countDownDate = new Date("Jun 10, 2018 02:14:25").getTime();
 
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days;
-    
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
-    }   
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                        // Get todays date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now an the count down date
+                        var distance = now - countDownDate;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("demo").innerHTML = days;
+
+                        // If the count down is over, write some text 
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("demo").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                }
+            });
+        }
     });
-
-    
-    
-</script>
-    
+</script> 
     
 
 
