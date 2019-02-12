@@ -165,14 +165,14 @@ a:hover, a:active { text-decoration: none; color:black }
     /*$.ajax({
         type: "GET", //request type    
         url: "saltnpepashere.txt", //url to get
-        success: function(data) { //callback to run when we get the data back*/
+        success: function(data) { //callback to run when we get the data back
             $.ajax({
                 type: "GET", //request type    
                 url: data, //url to get
                 success: function(data) { //callback to run when we get the data back
                     console.log(data) //this would return an string
 
-                    var dataObject = JSON.parse(data) // convert to an object
+                    var dataObject = JSON.parse(data) // convert to an object */
 
 
                     document.getElementById('lastOwl').src = dataObject.image;
@@ -215,11 +215,11 @@ a:hover, a:active { text-decoration: none; color:black }
                             clearInterval(x);
                             document.getElementById("demo").innerHTML = "EXPIRED";
                         }
-                    }, 1000);
+                    /*}, 1000);
                 }
             });
-        //}
-    //});
+        }
+    });*/
 </script> 
     
 
